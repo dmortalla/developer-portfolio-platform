@@ -10,8 +10,11 @@ describe("project registry", () => {
   it("contains the Urban Mobility Data Lakehouse", () => {
     const projects = getProjects();
 
-    expect(projects).toHaveLength(1);
-    expect(projects[0]?.slug).toBe("urban-mobility-data-lakehouse");
+    expect(
+      projects.some(
+        (project) => project.slug === "urban-mobility-data-lakehouse",
+      ),
+    ).toBe(true);
   });
 
   it("retrieves Urban Mobility by slug", () => {
@@ -28,7 +31,6 @@ describe("project registry", () => {
   it("registers Urban Mobility as the first featured project", () => {
     const featuredProjects = getFeaturedProjects();
 
-    expect(featuredProjects).toHaveLength(1);
     expect(featuredProjects[0]?.slug).toBe("urban-mobility-data-lakehouse");
     expect(featuredProjects[0]?.featured.order).toBe(1);
     expect(featuredProjects[0]?.featured.narrativeStage).toBe(

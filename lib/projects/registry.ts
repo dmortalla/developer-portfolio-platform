@@ -1,8 +1,12 @@
-﻿import { urbanMobilityDataLakehouse } from "@/content/projects/urban-mobility-data-lakehouse";
+﻿import { executiveHealthcareBiSystem } from "@/content/projects/executive-healthcare-bi-system";
+import { urbanMobilityDataLakehouse } from "@/content/projects/urban-mobility-data-lakehouse";
 import type { PortfolioProject } from "@/lib/projects/schema";
 import { validateProjects } from "@/lib/projects/validate";
 
-const projectDefinitions: readonly unknown[] = [urbanMobilityDataLakehouse];
+const projectDefinitions: readonly unknown[] = [
+  urbanMobilityDataLakehouse,
+  executiveHealthcareBiSystem,
+];
 
 const projects = validateProjects(projectDefinitions);
 
