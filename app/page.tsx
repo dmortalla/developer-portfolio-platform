@@ -1,8 +1,11 @@
 ﻿import { ProjectCard } from "@/components/projects/project-card";
+import { TechnologyToolkit } from "@/components/projects/technology-toolkit";
 import { getFeaturedProjects } from "@/lib/projects/registry";
+import { buildPortfolioTechnologyGroups } from "@/lib/projects/summarize";
 
 export default function Home() {
   const featuredProjects = getFeaturedProjects();
+  const technologyGroups = buildPortfolioTechnologyGroups(featuredProjects);
 
   return (
     <main>
@@ -105,6 +108,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <TechnologyToolkit groups={technologyGroups} />
 
       <section
         id="featured-systems"

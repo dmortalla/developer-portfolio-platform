@@ -2,45 +2,78 @@
 
 import type { PortfolioProject } from "@/lib/projects/schema";
 
-type ProjectCardProps = {
-  project: PortfolioProject;
-};
+function formatLabel(value: string): string {
+  return value
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project }: { project: PortfolioProject }) {
+  const technologies = project.technologies
+    .flatMap((group) => group.items)
+    .slice(0, 6);
+
   return (
-    <article className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-      <div className="mb-4 flex flex-wrap items-center gap-3">
-        <span className="rounded-full bg-zinc-100 px-3 py-1 text-xs font-medium tracking-wide text-zinc-700 uppercase">
-          {project.positioning.primaryDiscipline.replaceAll("-", " / ")}
-        </span>
+    <article className="group rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-zinc-300 hover:shadow-md sm:p-8">
+      <div className="flex flex-col gap-6">
+        <div className="flex flex-wrap items-center gap-3 text-xs font-semibold tracking-wide uppercase">
+          <span className="rounded-full bg-zinc-950 px-3 py-1.5 text-white">
+            {formatLabel(project.positioning.primaryDiscipline)}
+          </span>
 
-        <span className="text-sm text-zinc-500">{project.status}</span>
-      </div>
+          {project.featured.narrativeStage ? (
+            <span className="text-zinc-600">
+              {formatLabel(project.featured.narrativeStage)}
+            </span>
+          ) : null}
+        </div>
 
-      <h3 className="text-2xl font-semibold tracking-tight text-zinc-950">
-        {project.title}
-      </h3>
+        <div>
+          <h3 className="text-2xl font-semibold tracking-tight text-zinc-950 sm:text-3xl">
+            {project.title}
+          </h3>
 
-      <p className="mt-3 text-base leading-7 text-zinc-600">
-        {project.positioning.summary}
-      </p>
+          <p className="mt-3 text-base font-medium text-zinc-700">
+            {project.positioning.tagline}
+          </p>
 
-      <div className="mt-6 flex flex-wrap gap-4">
-        <Link
-          href={`/projects/${project.slug}`}
-          className="font-medium text-zinc-950 underline decoration-zinc-300 underline-offset-4 transition hover:decoration-zinc-950"
+          <p className="mt-4 max-w-3xl leading-7 text-zinc-600">
+            {project.positioning.summary}
+          </p>
+        </div>
+
+        <ul
+          aria-label={`${project.title} technologies`}
+          className="flex flex-wrap gap-2"
         >
-          View case study
-        </Link>
+          {technologies.map((technology) => (
+            <li
+              key={technology}
+              className="rounded-md border border-zinc-200 bg-zinc-50 px-3 py-1.5 text-xs font-medium text-zinc-700"
+            >
+              {technology}
+            </li>
+          ))}
+        </ul>
 
-        <a
-          href={project.repository.githubUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-medium text-zinc-600 underline decoration-zinc-300 underline-offset-4 transition hover:text-zinc-950 hover:decoration-zinc-950"
-        >
-          GitHub
-        </a>
+        <div className="flex flex-wrap items-center gap-5 border-t border-zinc-100 pt-5 text-sm">
+          <Link
+            href={`/projects/${project.slug}`}
+            className="font-semibold text-zinc-950 underline decoration-zinc-300 underline-offset-4 transition group-hover:decoration-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-950"
+          >
+            View case study
+          </Link>
+
+          <a
+            href={project.repository.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-zinc-600 transition hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-950"
+          >
+            View repository
+          </a>
+        </div>
       </div>
     </article>
   );

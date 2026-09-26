@@ -2,6 +2,7 @@
 
 const navigation = [
   { href: "/#about", label: "About" },
+  { href: "/#skills", label: "Skills" },
   { href: "/#featured-systems", label: "Projects" },
 ];
 
