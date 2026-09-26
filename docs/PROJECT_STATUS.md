@@ -6,7 +6,7 @@ Implementation
 
 ## Current Milestone
 
-VS01 — Repository Scaffold + Quality Foundation
+VS02 — Urban Mobility Data Lakehouse Vertical Slice
 
 ## Architecture Status
 
@@ -58,11 +58,13 @@ Current baseline:
 - typecheck: passing
 - unit tests: passing
 - production build: passing
+- Playwright E2E: passing
+- axe accessibility checks: passing
 - whitespace validation: passing
 
 ## Current Automated Tests
 
-1 unit test.
+14 unit/component tests and 3 Playwright E2E/accessibility tests.
 
 This baseline test verifies that the Vitest environment, jsdom environment,
 setup file, and test discovery pipeline operate successfully.
@@ -81,9 +83,19 @@ GitHub Actions validates:
 E2E and automated accessibility execution will be added when the first
 meaningful browser flow exists.
 
-## Next Milestone
+## Current VS02 Progress
 
-VS02 — Urban Mobility Data Lakehouse Vertical Slice
+Completed:
+
+- project schema
+- Zod validation
+- project registry
+- cross-project integrity validation
+- schema and registry unit tests
+
+Next:
+
+- integrate verified Urban Mobility Data Lakehouse content
 
 Planned scope:
 
@@ -100,9 +112,10 @@ Planned scope:
 
 ## Known Limitations
 
+- project schema and registry foundation are complete
 - no real portfolio project content has been integrated yet
-- no meaningful E2E test exists yet
-- accessibility automation is installed but not yet exercised
+- browser navigation is covered by Playwright E2E testing
+- automated accessibility checks are active for the homepage and first project case study
 - production deployment has not yet been configured
 - visual design tokens have not yet been implemented
 
