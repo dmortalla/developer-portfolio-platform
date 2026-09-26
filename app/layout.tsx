@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
+import { siteProfile } from "@/lib/site/profile";
 
 import "./globals.css";
 
@@ -18,11 +19,17 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Developer Portfolio",
-    template: "%s",
+    default: `${siteProfile.name} | Data & AI Engineer`,
+    template: `%s | ${siteProfile.name}`,
   },
   description:
-    "A portfolio of production-style systems spanning data engineering, analytics, machine learning, and generative AI.",
+    "Production-style data, analytics, machine learning, MLOps, and generative AI systems by Darrell Mortalla.",
+  openGraph: {
+    title: `${siteProfile.name} | Data & AI Engineer`,
+    description:
+      "Production-style data, analytics, machine learning, MLOps, and generative AI systems.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

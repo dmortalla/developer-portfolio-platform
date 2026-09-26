@@ -1,5 +1,7 @@
 ﻿import Link from "next/link";
 
+import { siteProfile } from "@/lib/site/profile";
+
 const navigation = [
   { href: "/#about", label: "About" },
   { href: "/#skills", label: "Skills" },
@@ -14,11 +16,11 @@ export function SiteHeader() {
           href="/"
           className="font-semibold tracking-tight text-zinc-950 transition hover:text-zinc-600 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-950"
         >
-          Developer Portfolio
+          {siteProfile.name}
         </Link>
 
         <nav aria-label="Primary navigation">
-          <ul className="flex items-center gap-5 text-sm font-medium text-zinc-600">
+          <ul className="flex items-center gap-4 text-sm font-medium text-zinc-600 sm:gap-5">
             {navigation.map((item) => (
               <li key={item.href}>
                 <Link
@@ -30,9 +32,20 @@ export function SiteHeader() {
               </li>
             ))}
 
-            <li>
+            <li className="hidden sm:list-item">
               <a
-                href="https://github.com/dmortalla"
+                href={siteProfile.linkedinUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-950"
+              >
+                LinkedIn
+              </a>
+            </li>
+
+            <li className="hidden sm:list-item">
+              <a
+                href={siteProfile.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-950"

@@ -2,6 +2,7 @@
 import { TechnologyToolkit } from "@/components/projects/technology-toolkit";
 import { getFeaturedProjects } from "@/lib/projects/registry";
 import { buildPortfolioTechnologyGroups } from "@/lib/projects/summarize";
+import { siteProfile } from "@/lib/site/profile";
 
 export default function Home() {
   const featuredProjects = getFeaturedProjects();
@@ -12,7 +13,7 @@ export default function Home() {
       <section className="border-b border-zinc-200 bg-white">
         <div className="mx-auto max-w-6xl px-6 py-24 sm:px-8 lg:py-32">
           <p className="text-sm font-semibold tracking-widest text-zinc-500 uppercase">
-            Developer Portfolio Platform
+            {siteProfile.name}
           </p>
 
           <h1 className="mt-5 max-w-4xl text-5xl font-semibold tracking-tight text-zinc-950 sm:text-6xl">
@@ -33,7 +34,16 @@ export default function Home() {
             </a>
 
             <a
-              href="https://github.com/dmortalla"
+              href={siteProfile.linkedinUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-lg border border-zinc-300 px-5 py-3 text-sm font-medium text-zinc-800 transition hover:border-zinc-950 hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950"
+            >
+              LinkedIn
+            </a>
+
+            <a
+              href={siteProfile.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-lg border border-zinc-300 px-5 py-3 text-sm font-medium text-zinc-800 transition hover:border-zinc-950 hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950"
@@ -104,6 +114,10 @@ export default function Home() {
               Each case study focuses on the problem, system architecture,
               implementation choices, verified engineering evidence, and the
               technical capabilities demonstrated by the work.
+            </p>
+
+            <p className="font-medium text-zinc-800">
+              {siteProfile.resumeAvailability}.
             </p>
           </div>
         </div>
