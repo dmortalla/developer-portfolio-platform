@@ -28,7 +28,7 @@ describe("ProjectCard", () => {
 
     expect(
       screen.getByRole("link", {
-        name: "GitHub",
+        name: "View repository",
       }),
     ).toHaveAttribute(
       "href",

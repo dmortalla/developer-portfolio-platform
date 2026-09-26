@@ -1,4 +1,6 @@
-﻿import type { PortfolioProject } from "@/lib/projects/schema";
+﻿import Link from "next/link";
+
+import type { PortfolioProject } from "@/lib/projects/schema";
 
 type ProjectCaseStudyProps = {
   project: PortfolioProject;
@@ -13,7 +15,16 @@ function formatLabel(value: string): string {
 
 export function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
   return (
-    <main className="mx-auto w-full max-w-5xl px-6 py-16 sm:px-8 lg:py-24">
+    <main className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-8 lg:py-24">
+      <div className="mb-10">
+        <Link
+          href="/#featured-systems"
+          className="text-sm font-medium text-zinc-600 transition hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-950"
+        >
+          ← Back to featured systems
+        </Link>
+      </div>
+
       <header className="max-w-3xl">
         <p className="text-sm font-semibold tracking-widest text-zinc-500 uppercase">
           {formatLabel(project.positioning.primaryDiscipline)}
@@ -113,7 +124,7 @@ export function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
           {project.architecture.components.map((component) => (
             <div
               key={component.name}
-              className="rounded-xl border border-zinc-200 p-5"
+              className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm"
             >
               <h3 className="font-semibold text-zinc-950">{component.name}</h3>
 
@@ -206,7 +217,7 @@ export function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
           {project.evidence.map((evidence) => (
             <div
               key={evidence.id}
-              className="rounded-xl border border-zinc-200 bg-zinc-50 p-5"
+              className="rounded-2xl border border-zinc-200 bg-zinc-50 p-6"
             >
               <p className="text-xs font-semibold tracking-wide text-zinc-500 uppercase">
                 {formatLabel(evidence.type)}

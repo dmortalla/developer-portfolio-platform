@@ -122,3 +122,17 @@ Planned scope:
 ## Architectural Invariant
 
 Adding a new project must not require modifying page-level rendering logic.
+
+## VS04 Portfolio Experience Milestone
+
+- Recruiter-facing site shell is implemented.
+- Professional identity, LinkedIn, and GitHub links are integrated.
+- Résumé remains private and is presented as available upon request.
+- Homepage visual hierarchy and project-card presentation are refined.
+- Project case studies use the shared generic renderer.
+- Evidence-backed technology summaries are derived from validated project content.
+- Open Graph metadata is configured for professional link sharing.
+- Robots and sitemap metadata routes are implemented.
+- Production site URLs are configured through `NEXT_PUBLIC_SITE_URL`.
+- Responsive navigation behavior has been refined for narrow screens.
+- Accessibility and browser validation remain part of the automated quality gate.
