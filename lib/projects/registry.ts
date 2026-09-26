@@ -1,7 +1,8 @@
-﻿import type { PortfolioProject } from "@/lib/projects/schema";
+﻿import { urbanMobilityDataLakehouse } from "@/content/projects/urban-mobility-data-lakehouse";
+import type { PortfolioProject } from "@/lib/projects/schema";
 import { validateProjects } from "@/lib/projects/validate";
 
-const projectDefinitions: readonly unknown[] = [];
+const projectDefinitions: readonly unknown[] = [urbanMobilityDataLakehouse];
 
 const projects = validateProjects(projectDefinitions);
 
