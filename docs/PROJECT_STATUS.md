@@ -58,11 +58,13 @@ Current baseline:
 - typecheck: passing
 - unit tests: passing
 - production build: passing
+- Playwright E2E: passing
+- axe accessibility checks: passing
 - whitespace validation: passing
 
 ## Current Automated Tests
 
-8 unit tests.
+14 unit/component tests and 3 Playwright E2E/accessibility tests.
 
 This baseline test verifies that the Vitest environment, jsdom environment,
 setup file, and test discovery pipeline operate successfully.
@@ -112,8 +114,8 @@ Planned scope:
 
 - project schema and registry foundation are complete
 - no real portfolio project content has been integrated yet
-- no meaningful E2E test exists yet
-- accessibility automation is installed but not yet exercised
+- browser navigation is covered by Playwright E2E testing
+- automated accessibility checks are active for the homepage and first project case study
 - production deployment has not yet been configured
 - visual design tokens have not yet been implemented
 

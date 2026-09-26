@@ -13,7 +13,7 @@ function formatLabel(value: string): string {
 
 export function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
   return (
-    <article className="mx-auto w-full max-w-5xl px-6 py-16 sm:px-8 lg:py-24">
+    <main className="mx-auto w-full max-w-5xl px-6 py-16 sm:px-8 lg:py-24">
       <header className="max-w-3xl">
         <p className="text-sm font-semibold tracking-widest text-zinc-500 uppercase">
           {formatLabel(project.positioning.primaryDiscipline)}
@@ -100,7 +100,7 @@ export function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
                 key={step}
                 className="rounded-xl border border-zinc-200 bg-zinc-50 p-4"
               >
-                <span className="text-xs font-semibold text-zinc-400">
+                <span className="text-xs font-semibold text-zinc-600">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <p className="mt-2 text-sm font-medium text-zinc-800">{step}</p>
@@ -246,6 +246,6 @@ export function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
           ))}
         </div>
       </section>
-    </article>
+    </main>
   );
 }

@@ -59,7 +59,7 @@ export default function Home() {
                 key={stage}
                 className="flex items-center gap-3 rounded-lg border border-zinc-200 bg-white px-4 py-3"
               >
-                <span className="text-xs text-zinc-400">
+                <span className="text-xs text-zinc-600">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 {stage}
