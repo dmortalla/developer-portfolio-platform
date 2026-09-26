@@ -70,6 +70,43 @@ export default function Home() {
       </section>
 
       <section
+        id="about"
+        className="scroll-mt-24 border-b border-zinc-200 bg-white"
+      >
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:py-24">
+          <div>
+            <p className="text-sm font-semibold tracking-widest text-zinc-500 uppercase">
+              About
+            </p>
+
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl">
+              Building across the modern data and AI stack.
+            </h2>
+          </div>
+
+          <div className="space-y-5 text-base leading-7 text-zinc-600">
+            <p>
+              This portfolio presents production-style systems spanning data
+              engineering, analytics and business intelligence, machine learning
+              engineering, MLOps, and generative AI.
+            </p>
+
+            <p>
+              The projects are organized as an engineering progression from raw
+              data and analytical modeling through predictive systems and
+              retrieval-augmented AI applications.
+            </p>
+
+            <p>
+              Each case study focuses on the problem, system architecture,
+              implementation choices, verified engineering evidence, and the
+              technical capabilities demonstrated by the work.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
         id="featured-systems"
         className="mx-auto max-w-6xl px-6 py-20 sm:px-8 lg:py-24"
       >

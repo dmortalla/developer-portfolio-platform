@@ -19,7 +19,15 @@ test.describe("portfolio vertical slice", () => {
       }),
     ).toBeVisible();
 
-    await page.getByRole("link", { name: "View case study" }).click();
+    const urbanMobilityCard = page.getByRole("article").filter({
+      has: page.getByRole("heading", {
+        name: "Urban Mobility Data Lakehouse",
+      }),
+    });
+
+    await urbanMobilityCard
+      .getByRole("link", { name: "View case study" })
+      .click();
 
     await expect(page).toHaveURL(/\/projects\/urban-mobility-data-lakehouse$/);
 
