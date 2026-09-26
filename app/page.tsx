@@ -11,56 +11,105 @@ export default function Home() {
   return (
     <main>
       <section className="border-b border-zinc-200 bg-white">
-        <div className="mx-auto max-w-6xl px-6 py-24 sm:px-8 lg:py-32">
-          <p className="text-sm font-semibold tracking-widest text-zinc-500 uppercase">
-            {siteProfile.name}
-          </p>
+        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 sm:px-8 lg:grid-cols-[1.25fr_0.75fr] lg:items-end lg:py-32">
+          <div>
+            <p className="text-sm font-semibold tracking-[0.18em] text-zinc-500 uppercase">
+              {siteProfile.name}
+            </p>
 
-          <h1 className="mt-5 max-w-4xl text-5xl font-semibold tracking-tight text-zinc-950 sm:text-6xl">
-            Engineering systems across the modern data and AI stack.
-          </h1>
+            <h1 className="mt-5 max-w-4xl text-5xl font-semibold tracking-tight text-zinc-950 sm:text-6xl lg:text-7xl">
+              Engineering systems across the modern data and AI stack.
+            </h1>
 
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-600">
-            A portfolio of production-style systems spanning data engineering,
-            analytics, machine learning, and generative AI.
-          </p>
+            <p className="mt-6 max-w-3xl text-lg leading-8 font-medium text-zinc-800">
+              {siteProfile.headline}
+            </p>
 
-          <div className="mt-8 flex flex-wrap gap-4">
-            <a
-              href="#featured-systems"
-              className="rounded-lg bg-zinc-950 px-5 py-3 text-sm font-medium text-white transition hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950"
-            >
-              View featured systems
-            </a>
+            <p className="mt-4 max-w-2xl leading-7 text-zinc-600">
+              Production-style systems spanning analytics, data science, machine
+              learning, MLOps, data engineering, and generative AI.
+            </p>
 
-            <a
-              href={siteProfile.linkedinUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-lg border border-zinc-300 px-5 py-3 text-sm font-medium text-zinc-800 transition hover:border-zinc-950 hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950"
-            >
-              LinkedIn
-            </a>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a
+                href="#featured-systems"
+                className="rounded-lg bg-zinc-950 px-5 py-3 text-sm font-medium text-white transition hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950"
+              >
+                View featured systems
+              </a>
 
-            <a
-              href={siteProfile.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-lg border border-zinc-300 px-5 py-3 text-sm font-medium text-zinc-800 transition hover:border-zinc-950 hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950"
-            >
-              GitHub
-            </a>
+              <a
+                href={siteProfile.linkedinUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-lg border border-zinc-300 px-5 py-3 text-sm font-medium text-zinc-800 transition hover:border-zinc-950 hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950"
+              >
+                LinkedIn
+              </a>
+
+              <a
+                href={siteProfile.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-lg border border-zinc-300 px-5 py-3 text-sm font-medium text-zinc-800 transition hover:border-zinc-950 hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950"
+              >
+                GitHub
+              </a>
+            </div>
           </div>
+
+          <aside className="rounded-2xl border border-zinc-200 bg-zinc-50 p-6 lg:p-8">
+            <p className="text-xs font-semibold tracking-widest text-zinc-500 uppercase">
+              Portfolio focus
+            </p>
+
+            <dl className="mt-6 space-y-5">
+              <div>
+                <dt className="text-sm text-zinc-500">Featured systems</dt>
+                <dd className="mt-1 text-2xl font-semibold text-zinc-950">4</dd>
+              </div>
+
+              <div>
+                <dt className="text-sm text-zinc-500">
+                  Engineering progression
+                </dt>
+                <dd className="mt-1 text-sm leading-6 font-medium text-zinc-800">
+                  Data → Analytics → Predictive ML → Generative AI
+                </dd>
+              </div>
+
+              <div>
+                <dt className="text-sm text-zinc-500">Résumé</dt>
+                <dd className="mt-1 text-sm font-medium text-zinc-800">
+                  {siteProfile.resumeAvailability}
+                </dd>
+              </div>
+            </dl>
+          </aside>
         </div>
       </section>
 
-      <section className="bg-zinc-50">
+      <section className="border-b border-zinc-200 bg-zinc-50">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:px-8">
-          <p className="text-sm font-semibold tracking-wide text-zinc-500 uppercase">
-            Engineering progression
-          </p>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-sm font-semibold tracking-widest text-zinc-500 uppercase">
+                Engineering progression
+              </p>
 
-          <ol className="mt-6 grid gap-3 text-sm font-medium text-zinc-700 sm:grid-cols-5">
+              <h2 className="mt-3 text-2xl font-semibold tracking-tight text-zinc-950">
+                From raw data to intelligent applications.
+              </h2>
+            </div>
+
+            <p className="max-w-xl text-sm leading-6 text-zinc-600">
+              The featured systems show a progression across the modern
+              data-and-AI lifecycle rather than four isolated portfolio
+              exercises.
+            </p>
+          </div>
+
+          <ol className="mt-8 grid gap-3 text-sm font-medium text-zinc-700 sm:grid-cols-5">
             {[
               "Raw Data",
               "Data Engineering",
@@ -70,12 +119,15 @@ export default function Home() {
             ].map((stage, index) => (
               <li
                 key={stage}
-                className="flex items-center gap-3 rounded-lg border border-zinc-200 bg-white px-4 py-3"
+                className="rounded-xl border border-zinc-200 bg-white p-4"
               >
-                <span className="text-xs text-zinc-600">
+                <span className="text-xs font-semibold tracking-widest text-zinc-600">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                {stage}
+
+                <p className="mt-2 text-sm font-semibold text-zinc-900">
+                  {stage}
+                </p>
               </li>
             ))}
           </ol>
@@ -127,7 +179,7 @@ export default function Home() {
 
       <section
         id="featured-systems"
-        className="mx-auto max-w-6xl px-6 py-20 sm:px-8 lg:py-24"
+        className="mx-auto max-w-6xl px-6 py-20 sm:px-8 lg:py-28"
       >
         <div className="max-w-2xl">
           <p className="text-sm font-semibold tracking-widest text-zinc-500 uppercase">
