@@ -1,69 +1,100 @@
-import Image from "next/image";
+﻿import { ProjectCard } from "@/components/projects/project-card";
+import { getFeaturedProjects } from "@/lib/projects/registry";
 
 export default function Home() {
+  const featuredProjects = getFeaturedProjects();
+
   return (
-    <div className="flex flex-1 flex-col items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex w-full max-w-3xl flex-1 flex-col items-center justify-between bg-white px-16 py-32 sm:items-start dark:bg-black">
-        <Image
-          className="h-5 w-[100px] dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl leading-10 font-semibold tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <main>
+      <section className="border-b border-zinc-200 bg-white">
+        <div className="mx-auto max-w-6xl px-6 py-24 sm:px-8 lg:py-32">
+          <p className="text-sm font-semibold tracking-widest text-zinc-500 uppercase">
+            Developer Portfolio Platform
+          </p>
+
+          <h1 className="mt-5 max-w-4xl text-5xl font-semibold tracking-tight text-zinc-950 sm:text-6xl">
+            Engineering systems across the modern data and AI stack.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
+
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-600">
+            A portfolio of production-style systems spanning data engineering,
+            analytics, machine learning, and generative AI.
+          </p>
+
+          <div className="mt-8 flex flex-wrap gap-4">
             <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="#featured-systems"
+              className="rounded-lg bg-zinc-950 px-5 py-3 text-sm font-medium text-white transition hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
+              View featured systems
+            </a>
+
             <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="https://github.com/dmortalla"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-lg border border-zinc-300 px-5 py-3 text-sm font-medium text-zinc-800 transition hover:border-zinc-950 hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950"
             >
-              Learning
-            </a>{" "}
-            center.
+              GitHub
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-zinc-50">
+        <div className="mx-auto max-w-6xl px-6 py-16 sm:px-8">
+          <p className="text-sm font-semibold tracking-wide text-zinc-500 uppercase">
+            Engineering progression
+          </p>
+
+          <ol className="mt-6 grid gap-3 text-sm font-medium text-zinc-700 sm:grid-cols-5">
+            {[
+              "Raw Data",
+              "Data Engineering",
+              "Analytics / BI",
+              "Predictive ML",
+              "Generative AI",
+            ].map((stage, index) => (
+              <li
+                key={stage}
+                className="flex items-center gap-3 rounded-lg border border-zinc-200 bg-white px-4 py-3"
+              >
+                <span className="text-xs text-zinc-400">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                {stage}
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <section
+        id="featured-systems"
+        className="mx-auto max-w-6xl px-6 py-20 sm:px-8 lg:py-24"
+      >
+        <div className="max-w-2xl">
+          <p className="text-sm font-semibold tracking-widest text-zinc-500 uppercase">
+            Featured systems
+          </p>
+
+          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl">
+            Engineering evidence, not résumé decoration.
+          </h2>
+
+          <p className="mt-4 leading-7 text-zinc-600">
+            Each system is presented through its problem, architecture,
+            implementation, evidence, and the engineering capability it
+            demonstrates.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="bg-foreground text-background flex h-12 w-full items-center justify-center gap-2 rounded-full px-5 transition-colors hover:bg-[#383838] md:w-[158px] dark:hover:bg-[#ccc]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="h-[14px] w-4 dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] md:w-[158px] dark:border-white/[.145] dark:hover:bg-[#1a1a1a]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="mt-10 grid gap-6">
+          {featuredProjects.map((project) => (
+            <ProjectCard key={project.slug} project={project} />
+          ))}
         </div>
-      </main>
-    </div>
+      </section>
+    </main>
   );
 }
