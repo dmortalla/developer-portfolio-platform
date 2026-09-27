@@ -136,3 +136,54 @@ Adding a new project must not require modifying page-level rendering logic.
 - Production site URLs are configured through `NEXT_PUBLIC_SITE_URL`.
 - Responsive navigation behavior has been refined for narrow screens.
 - Accessibility and browser validation remain part of the automated quality gate.
+
+## VS05 — Production Deployment Verification
+
+Status: Complete
+
+The Developer Portfolio Platform is deployed to production and available through its custom domain.
+
+### Production environment
+
+- Production domain: https://dmortalla.dev
+- Hosting platform: Vercel
+- Domain registrar / DNS provider: Hostinger
+- Production environment variable: `NEXT_PUBLIC_SITE_URL=https://dmortalla.dev`
+- Custom-domain DNS configuration: verified
+- HTTPS availability: verified
+- Production homepage: verified
+- `robots.txt`: verified
+- `sitemap.xml`: verified
+- All four flagship project URLs are present in the production sitemap.
+
+### Production discovery verification
+
+The deployed `robots.txt` references:
+
+`https://dmortalla.dev/sitemap.xml`
+
+The production sitemap uses `https://dmortalla.dev` as the canonical base URL and contains:
+
+1. `/`
+2. `/projects/urban-mobility-data-lakehouse`
+3. `/projects/executive-healthcare-bi-system`
+4. `/projects/customer-churn-prediction-platform`
+5. `/projects/ai-rag-knowledge-assistant`
+
+### Deferred dependency maintenance
+
+ESLint remains on `9.39.5`.
+
+An upgrade to ESLint 10 is intentionally deferred until the relevant dependencies used by `eslint-config-next@16.3.6` declare compatible ESLint 10 support. The current version produces a deployment maintenance warning but does not prevent successful builds or production deployment.
+
+### Post-v1 experience backlog
+
+Desktop case-study readability should receive a focused polish pass while preserving the current responsive/mobile behavior:
+
+- increase body-text contrast
+- narrow long-form desktop reading measure
+- slightly increase desktop body font size and/or line height
+- strengthen heading and section hierarchy
+- reduce excessive horizontal whitespace in text-heavy sections
+
+This is an experience refinement, not an architectural change.
