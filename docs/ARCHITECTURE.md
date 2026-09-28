@@ -1,4 +1,4 @@
-﻿# Developer Portfolio Platform Architecture
+# Developer Portfolio Platform Architecture
 
 ## Purpose
 
@@ -109,7 +109,7 @@ The repository uses:
 
 GitHub Actions validates pull requests and main-branch changes.
 
-Vercel is the intended production deployment platform.
+Vercel is the production deployment platform.
 
 Hostinger may provide domain registration and DNS management.
 
@@ -150,7 +150,7 @@ The platform should support:
 - reduced-motion preferences
 - meaningful alternative text
 
-Automated accessibility checks will be introduced into the E2E quality gate.
+Automated accessibility checks are included in the Playwright E2E quality gate using axe.
 
 ## Extensibility Test
 
