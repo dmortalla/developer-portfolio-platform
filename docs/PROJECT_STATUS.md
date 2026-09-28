@@ -1,4 +1,4 @@
-﻿# Developer Portfolio Platform — Project Status
+# Developer Portfolio Platform — Project Status
 
 ## Current Phase
 
@@ -176,14 +176,63 @@ ESLint remains on `9.39.5`.
 
 An upgrade to ESLint 10 is intentionally deferred until the relevant dependencies used by `eslint-config-next@16.3.6` declare compatible ESLint 10 support. The current version produces a deployment maintenance warning but does not prevent successful builds or production deployment.
 
-### Post-v1 experience backlog
+## VS06 — v1.1.0 Portfolio Readability and Presentation Polish
 
-Desktop case-study readability should receive a focused polish pass while preserving the current responsive/mobile behavior:
+Status: Complete
 
-- increase body-text contrast
-- narrow long-form desktop reading measure
-- slightly increase desktop body font size and/or line height
-- strengthen heading and section hierarchy
-- reduce excessive horizontal whitespace in text-heavy sections
+The post-v1 experience refinement is complete and verified in production.
 
-This is an experience refinement, not an architectural change.
+### Readability and visual hierarchy
+
+- Light-first editorial styling is now enforced consistently instead of inheriting automatic operating-system dark mode.
+- Body-text contrast and accessibility were strengthened.
+- Major section headings use wider layout measures where appropriate.
+- Supporting intro copy uses wider, more consistent reading widths.
+- Long-form case-study prose remains intentionally narrower for readability.
+- Case-study sections use stronger visual hierarchy through bordered panels, accent headings, and improved spacing.
+- Homepage and project presentation remain responsive across desktop and mobile layouts.
+
+### Homepage presentation
+
+- The hero headline uses a wider measure for cleaner desktop wrapping.
+- Portfolio Focus now appears below the hero rather than competing with the primary headline.
+- Portfolio Focus uses a responsive horizontal summary on desktop and stacked presentation on smaller screens.
+- The portfolio progression is expressed through concrete engineering artifacts:
+  `Data Lakehouse Pipeline → Executive BI System → Containerized ML API → Vector Retrieval RAG API`.
+- The broader portfolio progression section now keeps its supporting copy aligned with the section heading rather than floating into a separate right-hand column.
+
+### Technology taxonomy
+
+- Portfolio technology aggregation normalizes duplicate display labels.
+- Generic `Python` is suppressed when a versioned Python label is available.
+- `Pytest` / `pytest` are normalized to `pytest`.
+- LangChain is classified under Frameworks rather than Machine Learning & AI.
+- The Technology Toolkit uses a stable two-column desktop layout.
+
+### Repository consistency
+
+- The Customer Churn repository was renamed from `customer-churn-platform` to `customer-churn-prediction-platform`.
+- Public README references, CI badge URLs, and portfolio repository URLs were updated to the new canonical repository name.
+- Internal MLflow/configuration identifiers were intentionally left unchanged because they are runtime/history identifiers rather than public repository URLs.
+- The AI RAG Knowledge Assistant README now includes a technology badge row consistent with the other flagship repositories.
+
+### Verification
+
+- Desktop production presentation verified at `https://dmortalla.dev`.
+- Mobile production presentation verified.
+- Homepage and project accessibility checks pass.
+- Full quality gate passes:
+  - ESLint
+  - TypeScript
+  - unit tests
+  - production build
+  - Playwright E2E
+  - axe accessibility checks
+  - Prettier
+  - `git diff --check`
+
+### Architecture
+
+The existing architectural invariant remains unchanged:
+
+Adding a new project must not require modifying page-level rendering logic.
