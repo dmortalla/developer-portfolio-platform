@@ -166,7 +166,8 @@ export const customerChurnPredictionPlatform = {
       title: "Validated Telecom Data Ingestion",
       description:
         "The ingestion workflow processes the 7,043-row, 21-column telecom churn dataset into a validated processed dataset.",
-      sourceUrl: "https://github.com/dmortalla/customer-churn-platform",
+      sourceUrl:
+        "https://github.com/dmortalla/customer-churn-prediction-platform",
     },
     {
       id: "feature-pipeline",
@@ -174,7 +175,8 @@ export const customerChurnPredictionPlatform = {
       title: "Model Feature Pipeline",
       description:
         "The feature pipeline performs categorical encoding, converts Churn to a binary target, excludes customerID, and produces model-ready feature data.",
-      sourceUrl: "https://github.com/dmortalla/customer-churn-platform",
+      sourceUrl:
+        "https://github.com/dmortalla/customer-churn-prediction-platform",
     },
     {
       id: "baseline-training",
@@ -182,7 +184,8 @@ export const customerChurnPredictionPlatform = {
       title: "Logistic Regression Baseline",
       description:
         "The baseline uses a scikit-learn Pipeline with median SimpleImputer preprocessing and LogisticRegression configured with random_state=42, max_iter=1000, and liblinear.",
-      sourceUrl: "https://github.com/dmortalla/customer-churn-platform",
+      sourceUrl:
+        "https://github.com/dmortalla/customer-churn-prediction-platform",
     },
     {
       id: "xgboost-tuning",
@@ -190,7 +193,8 @@ export const customerChurnPredictionPlatform = {
       title: "XGBoost Hyperparameter Tuning",
       description:
         "The project tunes an XGBoost classifier using GridSearchCV and persists the tuned model separately from the serving baseline.",
-      sourceUrl: "https://github.com/dmortalla/customer-churn-platform",
+      sourceUrl:
+        "https://github.com/dmortalla/customer-churn-prediction-platform",
     },
     {
       id: "mlflow-tracking",
@@ -198,7 +202,8 @@ export const customerChurnPredictionPlatform = {
       title: "MLflow Experiment Tracking",
       description:
         "Training workflows log machine learning experiment information and artifacts through MLflow.",
-      sourceUrl: "https://github.com/dmortalla/customer-churn-platform",
+      sourceUrl:
+        "https://github.com/dmortalla/customer-churn-prediction-platform",
     },
     {
       id: "model-artifacts",
@@ -206,7 +211,8 @@ export const customerChurnPredictionPlatform = {
       title: "Persisted Model and Report Artifacts",
       description:
         "The project persists trained models and machine learning reports so development results can be reproduced and inspected.",
-      sourceUrl: "https://github.com/dmortalla/customer-churn-platform",
+      sourceUrl:
+        "https://github.com/dmortalla/customer-churn-prediction-platform",
     },
     {
       id: "fastapi-serving",
@@ -214,7 +220,8 @@ export const customerChurnPredictionPlatform = {
       title: "FastAPI Prediction Service",
       description:
         "The API exposes churn inference and returns a predicted class, a Yes/No churn label, and churn probability.",
-      sourceUrl: "https://github.com/dmortalla/customer-churn-platform",
+      sourceUrl:
+        "https://github.com/dmortalla/customer-churn-prediction-platform",
     },
     {
       id: "serving-model-boundary",
@@ -222,7 +229,8 @@ export const customerChurnPredictionPlatform = {
       title: "Explicit Serving Model Boundary",
       description:
         "The current API loads the persisted Logistic Regression baseline for inference; the tuned XGBoost model is produced and persisted separately as a development artifact.",
-      sourceUrl: "https://github.com/dmortalla/customer-churn-platform",
+      sourceUrl:
+        "https://github.com/dmortalla/customer-churn-prediction-platform",
     },
     {
       id: "container-runtime",
@@ -230,7 +238,8 @@ export const customerChurnPredictionPlatform = {
       title: "Dockerized Inference Runtime",
       description:
         "The FastAPI service is packaged for containerized execution with Docker and Docker Compose.",
-      sourceUrl: "https://github.com/dmortalla/customer-churn-platform",
+      sourceUrl:
+        "https://github.com/dmortalla/customer-churn-prediction-platform",
     },
     {
       id: "automated-tests",
@@ -238,7 +247,8 @@ export const customerChurnPredictionPlatform = {
       title: "Automated ML Platform Tests",
       description:
         "The audited repository includes automated tests across ingestion, feature engineering, training, and serving workflows.",
-      sourceUrl: "https://github.com/dmortalla/customer-churn-platform",
+      sourceUrl:
+        "https://github.com/dmortalla/customer-churn-prediction-platform",
     },
     {
       id: "ci-workflow",
@@ -246,7 +256,8 @@ export const customerChurnPredictionPlatform = {
       title: "GitHub Actions Continuous Integration",
       description:
         "GitHub Actions runs automated project quality checks as part of the repository workflow.",
-      sourceUrl: "https://github.com/dmortalla/customer-churn-platform",
+      sourceUrl:
+        "https://github.com/dmortalla/customer-churn-prediction-platform",
     },
     {
       id: "api-input-limitation",
@@ -254,7 +265,8 @@ export const customerChurnPredictionPlatform = {
       title: "Current API Input Boundary",
       description:
         "The current prediction API expects engineered model features rather than accepting raw customer records directly.",
-      sourceUrl: "https://github.com/dmortalla/customer-churn-platform",
+      sourceUrl:
+        "https://github.com/dmortalla/customer-churn-prediction-platform",
     },
   ],
 
@@ -294,7 +306,8 @@ export const customerChurnPredictionPlatform = {
   ],
 
   repository: {
-    githubUrl: "https://github.com/dmortalla/customer-churn-platform",
+    githubUrl:
+      "https://github.com/dmortalla/customer-churn-prediction-platform",
   },
 
   featured: {
