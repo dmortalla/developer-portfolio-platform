@@ -25,7 +25,7 @@ export function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
         </Link>
       </div>
 
-      <header className="max-w-3xl">
+      <header className="max-w-5xl">
         <p className="text-sm font-semibold tracking-widest text-blue-700 uppercase">
           {formatLabel(project.positioning.primaryDiscipline)}
         </p>
@@ -34,11 +34,11 @@ export function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
           {project.title}
         </h1>
 
-        <p className="mt-5 max-w-2xl text-xl leading-8 text-zinc-700">
+        <p className="mt-5 max-w-3xl text-xl leading-8 text-zinc-700">
           {project.positioning.tagline}
         </p>
 
-        <p className="mt-6 max-w-2xl text-base leading-7 text-zinc-700 lg:text-lg lg:leading-8">
+        <p className="mt-6 max-w-3xl text-base leading-7 text-zinc-700 lg:text-lg lg:leading-8">
           {project.positioning.summary}
         </p>
 

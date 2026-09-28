@@ -25,7 +25,7 @@ export default function Home() {
               {siteProfile.headline}
             </p>
 
-            <p className="mt-4 max-w-2xl leading-7 text-zinc-600">
+            <p className="mt-4 max-w-4xl leading-7 text-zinc-600">
               Production-style systems spanning analytics, data science, machine
               learning, MLOps, data engineering, and generative AI.
             </p>
@@ -98,7 +98,7 @@ export default function Home() {
 
       <section className="border-b border-zinc-200 bg-zinc-50">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:px-8">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div className="flex max-w-4xl flex-col gap-4">
             <div>
               <p className="text-sm font-semibold tracking-widest text-zinc-500 uppercase">
                 Portfolio progression
@@ -188,7 +188,7 @@ export default function Home() {
         id="featured-systems"
         className="mx-auto max-w-6xl px-6 py-20 sm:px-8 lg:py-28"
       >
-        <div className="max-w-2xl">
+        <div className="max-w-4xl">
           <p className="text-sm font-semibold tracking-widest text-zinc-600 uppercase">
             Featured systems
           </p>

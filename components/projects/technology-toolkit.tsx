@@ -29,7 +29,7 @@ export function TechnologyToolkit({
       className="scroll-mt-24 border-b border-zinc-200 bg-zinc-50"
     >
       <div className="mx-auto max-w-6xl px-6 py-20 sm:px-8 lg:py-24">
-        <div className="max-w-3xl">
+        <div className="max-w-5xl">
           <p className="text-sm font-semibold tracking-widest text-zinc-500 uppercase">
             Technical toolkit
           </p>
