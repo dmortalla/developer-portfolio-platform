@@ -1,4 +1,4 @@
-﻿import type { PortfolioProject } from "@/lib/projects/schema";
+import type { PortfolioProject } from "@/lib/projects/schema";
 
 export const customerChurnPredictionPlatform = {
   slug: "customer-churn-prediction-platform",
@@ -8,6 +8,7 @@ export const customerChurnPredictionPlatform = {
   positioning: {
     primaryDiscipline: "ml-engineering",
     secondaryDisciplines: ["mlops"],
+    systemArchetype: "Dockerized ML API",
     tagline: "From customer data to deployable churn-risk predictions.",
     summary:
       "A production-style machine learning platform that ingests telecom customer data, engineers model-ready features, trains and tunes churn models, tracks experiments with MLflow, persists model artifacts, and serves churn predictions through FastAPI and Docker.",

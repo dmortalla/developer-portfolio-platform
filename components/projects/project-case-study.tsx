@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 
 import type { PortfolioProject } from "@/lib/projects/schema";
 
@@ -26,7 +26,7 @@ export function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
       </div>
 
       <header className="max-w-3xl">
-        <p className="text-sm font-semibold tracking-widest text-zinc-500 uppercase">
+        <p className="text-sm font-semibold tracking-widest text-blue-700 uppercase">
           {formatLabel(project.positioning.primaryDiscipline)}
         </p>
 
@@ -34,11 +34,11 @@ export function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
           {project.title}
         </h1>
 
-        <p className="mt-5 text-xl leading-8 text-zinc-600">
+        <p className="mt-5 max-w-2xl text-xl leading-8 text-zinc-700">
           {project.positioning.tagline}
         </p>
 
-        <p className="mt-6 text-base leading-7 text-zinc-600">
+        <p className="mt-6 max-w-2xl text-base leading-7 text-zinc-700 lg:text-lg lg:leading-8">
           {project.positioning.summary}
         </p>
 
@@ -47,7 +47,7 @@ export function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
             href={project.repository.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex rounded-lg bg-zinc-950 px-5 py-3 text-sm font-medium text-white transition hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950"
+            className="inline-flex rounded-lg bg-zinc-950 px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-blue-800 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950"
           >
             View repository
           </a>
@@ -56,11 +56,11 @@ export function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
 
       <section
         aria-labelledby="problem-heading"
-        className="mt-20 border-t border-zinc-200 pt-12"
+        className="mt-12 rounded-3xl border border-stone-200 bg-white/80 px-6 py-10 shadow-sm sm:px-8 lg:mt-16"
       >
         <h2
           id="problem-heading"
-          className="text-3xl font-semibold tracking-tight text-zinc-950"
+          className="border-l-4 border-blue-700 pl-4 text-3xl font-semibold tracking-tight text-zinc-950"
         >
           Problem
         </h2>
@@ -68,21 +68,21 @@ export function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
         <div className="mt-6 grid gap-8 md:grid-cols-3">
           <div>
             <h3 className="font-semibold text-zinc-950">Context</h3>
-            <p className="mt-2 leading-7 text-zinc-600">
+            <p className="mt-2 leading-7 text-zinc-700 lg:leading-8">
               {project.problem.context}
             </p>
           </div>
 
           <div>
             <h3 className="font-semibold text-zinc-950">Challenge</h3>
-            <p className="mt-2 leading-7 text-zinc-600">
+            <p className="mt-2 leading-7 text-zinc-700 lg:leading-8">
               {project.problem.challenge}
             </p>
           </div>
 
           <div>
             <h3 className="font-semibold text-zinc-950">Objective</h3>
-            <p className="mt-2 leading-7 text-zinc-600">
+            <p className="mt-2 leading-7 text-zinc-700 lg:leading-8">
               {project.problem.objective}
             </p>
           </div>
@@ -91,16 +91,16 @@ export function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
 
       <section
         aria-labelledby="architecture-heading"
-        className="mt-20 border-t border-zinc-200 pt-12"
+        className="mt-12 rounded-3xl border border-stone-200 bg-white/80 px-6 py-10 shadow-sm sm:px-8 lg:mt-16"
       >
         <h2
           id="architecture-heading"
-          className="text-3xl font-semibold tracking-tight text-zinc-950"
+          className="border-l-4 border-blue-700 pl-4 text-3xl font-semibold tracking-tight text-zinc-950"
         >
           Architecture
         </h2>
 
-        <p className="mt-5 max-w-3xl leading-7 text-zinc-600">
+        <p className="mt-5 max-w-2xl leading-7 text-zinc-700 lg:text-lg lg:leading-8">
           {project.architecture.summary}
         </p>
 
@@ -109,7 +109,7 @@ export function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
             {project.architecture.dataFlow.map((step, index) => (
               <li
                 key={step}
-                className="rounded-xl border border-zinc-200 bg-zinc-50 p-4"
+                className="rounded-xl border border-stone-200 bg-stone-50 p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-md"
               >
                 <span className="text-xs font-semibold text-zinc-600">
                   {String(index + 1).padStart(2, "0")}
@@ -124,11 +124,11 @@ export function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
           {project.architecture.components.map((component) => (
             <div
               key={component.name}
-              className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm"
+              className="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-md"
             >
               <h3 className="font-semibold text-zinc-950">{component.name}</h3>
 
-              <p className="mt-2 leading-7 text-zinc-600">
+              <p className="mt-2 leading-7 text-zinc-700 lg:leading-8">
                 {component.responsibility}
               </p>
 
@@ -151,11 +151,11 @@ export function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
 
       <section
         aria-labelledby="technology-heading"
-        className="mt-20 border-t border-zinc-200 pt-12"
+        className="mt-12 rounded-3xl border border-stone-200 bg-white/80 px-6 py-10 shadow-sm sm:px-8 lg:mt-16"
       >
         <h2
           id="technology-heading"
-          className="text-3xl font-semibold tracking-tight text-zinc-950"
+          className="border-l-4 border-blue-700 pl-4 text-3xl font-semibold tracking-tight text-zinc-950"
         >
           Technology
         </h2>
@@ -179,11 +179,11 @@ export function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
 
       <section
         aria-labelledby="contributions-heading"
-        className="mt-20 border-t border-zinc-200 pt-12"
+        className="mt-12 rounded-3xl border border-stone-200 bg-white/80 px-6 py-10 shadow-sm sm:px-8 lg:mt-16"
       >
         <h2
           id="contributions-heading"
-          className="text-3xl font-semibold tracking-tight text-zinc-950"
+          className="border-l-4 border-blue-700 pl-4 text-3xl font-semibold tracking-tight text-zinc-950"
         >
           Engineering Contribution
         </h2>
@@ -194,7 +194,7 @@ export function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
               <h3 className="text-lg font-semibold text-zinc-950">
                 {contribution.title}
               </h3>
-              <p className="mt-2 max-w-3xl leading-7 text-zinc-600">
+              <p className="mt-2 max-w-2xl leading-7 text-zinc-700 lg:text-lg lg:leading-8">
                 {contribution.description}
               </p>
             </div>
@@ -204,11 +204,11 @@ export function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
 
       <section
         aria-labelledby="evidence-heading"
-        className="mt-20 border-t border-zinc-200 pt-12"
+        className="mt-12 rounded-3xl border border-stone-200 bg-white/80 px-6 py-10 shadow-sm sm:px-8 lg:mt-16"
       >
         <h2
           id="evidence-heading"
-          className="text-3xl font-semibold tracking-tight text-zinc-950"
+          className="border-l-4 border-blue-700 pl-4 text-3xl font-semibold tracking-tight text-zinc-950"
         >
           Engineering Evidence
         </h2>
@@ -217,7 +217,7 @@ export function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
           {project.evidence.map((evidence) => (
             <div
               key={evidence.id}
-              className="rounded-2xl border border-zinc-200 bg-zinc-50 p-6"
+              className="rounded-2xl border border-stone-200 bg-stone-50 p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-md"
             >
               <p className="text-xs font-semibold tracking-wide text-zinc-500 uppercase">
                 {formatLabel(evidence.type)}
@@ -227,7 +227,7 @@ export function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
                 {evidence.title}
               </h3>
 
-              <p className="mt-2 leading-7 text-zinc-600">
+              <p className="mt-2 leading-7 text-zinc-700 lg:leading-8">
                 {evidence.description}
               </p>
             </div>
@@ -237,11 +237,11 @@ export function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
 
       <section
         aria-labelledby="capabilities-heading"
-        className="mt-20 border-t border-zinc-200 pt-12"
+        className="mt-12 rounded-3xl border border-stone-200 bg-white/80 px-6 py-10 shadow-sm sm:px-8 lg:mt-16"
       >
         <h2
           id="capabilities-heading"
-          className="text-3xl font-semibold tracking-tight text-zinc-950"
+          className="border-l-4 border-blue-700 pl-4 text-3xl font-semibold tracking-tight text-zinc-950"
         >
           What It Proves
         </h2>
@@ -250,7 +250,7 @@ export function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
           {project.capabilities.map((capability) => (
             <div key={capability.name}>
               <h3 className="font-semibold text-zinc-950">{capability.name}</h3>
-              <p className="mt-2 leading-7 text-zinc-600">
+              <p className="mt-2 leading-7 text-zinc-700 lg:leading-8">
                 {capability.description}
               </p>
             </div>

@@ -1,4 +1,4 @@
-﻿import type { PortfolioProject } from "@/lib/projects/schema";
+import type { PortfolioProject } from "@/lib/projects/schema";
 
 export const executiveHealthcareBiSystem = {
   slug: "executive-healthcare-bi-system",
@@ -8,6 +8,7 @@ export const executiveHealthcareBiSystem = {
   positioning: {
     primaryDiscipline: "analytics-bi",
     secondaryDisciplines: [],
+    systemArchetype: "Executive BI System",
     tagline: "From healthcare operations data to executive decision support.",
     summary:
       "A healthcare analytics and business intelligence system that prepares and validates source data in Python, models it dimensionally for analysis, and delivers executive, operational, clinical, demographic, and financial insights through SQL and Power BI.",

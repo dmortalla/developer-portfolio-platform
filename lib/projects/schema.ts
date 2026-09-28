@@ -1,4 +1,4 @@
-﻿import { z } from "zod";
+import { z } from "zod";
 
 export const projectDisciplineSchema = z.enum([
   "data-engineering",
@@ -104,6 +104,7 @@ export const portfolioProjectSchema = z.object({
   positioning: z.object({
     primaryDiscipline: projectDisciplineSchema,
     secondaryDisciplines: z.array(projectDisciplineSchema).default([]),
+    systemArchetype: z.string().min(1),
     tagline: z.string().min(1),
     summary: z.string().min(1),
   }),

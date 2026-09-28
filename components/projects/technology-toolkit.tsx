@@ -1,4 +1,4 @@
-﻿import type { PortfolioTechnologyGroup } from "@/lib/projects/summarize";
+import type { PortfolioTechnologyGroup } from "@/lib/projects/summarize";
 
 function formatLabel(value: string): string {
   const labels: Record<string, string> = {
@@ -44,7 +44,7 @@ export function TechnologyToolkit({
           </p>
         </div>
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2">
           {groups.map((group) => (
             <article
               key={group.category}

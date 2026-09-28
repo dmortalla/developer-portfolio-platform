@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 
 import type { PortfolioProject } from "@/lib/projects/schema";
 
@@ -22,11 +22,9 @@ export function ProjectCard({ project }: { project: PortfolioProject }) {
             {formatLabel(project.positioning.primaryDiscipline)}
           </span>
 
-          {project.featured.narrativeStage ? (
-            <span className="text-zinc-600">
-              {formatLabel(project.featured.narrativeStage)}
-            </span>
-          ) : null}
+          <span className="rounded-full border border-blue-200 bg-blue-50 px-3 py-1.5 text-blue-800">
+            {project.positioning.systemArchetype}
+          </span>
         </div>
 
         <div>

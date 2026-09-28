@@ -1,4 +1,4 @@
-﻿import type { PortfolioProject } from "@/lib/projects/schema";
+import type { PortfolioProject } from "@/lib/projects/schema";
 
 export const aiRagKnowledgeAssistant = {
   slug: "ai-rag-knowledge-assistant",
@@ -8,6 +8,7 @@ export const aiRagKnowledgeAssistant = {
   positioning: {
     primaryDiscipline: "llm-engineering",
     secondaryDisciplines: ["ai-engineering"],
+    systemArchetype: "RAG Knowledge System",
     tagline:
       "Grounded answers from retrieved knowledge, with source attribution.",
     summary:
@@ -100,16 +101,11 @@ export const aiRagKnowledgeAssistant = {
     },
     {
       category: "ml-ai",
-      items: [
-        "OpenAI text-embedding-3-small",
-        "OpenAI gpt-4o-mini",
-        "LangChain",
-        "FAISS",
-      ],
+      items: ["OpenAI text-embedding-3-small", "OpenAI gpt-4o-mini", "FAISS"],
     },
     {
       category: "framework",
-      items: ["FastAPI", "Streamlit"],
+      items: ["FastAPI", "LangChain", "Streamlit"],
     },
   ],
 

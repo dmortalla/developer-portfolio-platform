@@ -1,4 +1,4 @@
-﻿import { ProjectCard } from "@/components/projects/project-card";
+import { ProjectCard } from "@/components/projects/project-card";
 import { TechnologyToolkit } from "@/components/projects/technology-toolkit";
 import { getFeaturedProjects } from "@/lib/projects/registry";
 import { buildPortfolioTechnologyGroups } from "@/lib/projects/summarize";
@@ -11,13 +11,13 @@ export default function Home() {
   return (
     <main>
       <section className="border-b border-zinc-200 bg-white">
-        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 sm:px-8 lg:grid-cols-[1.25fr_0.75fr] lg:items-end lg:py-32">
+        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 sm:px-8 lg:items-end lg:py-32">
           <div>
             <p className="text-sm font-semibold tracking-[0.18em] text-zinc-500 uppercase">
               {siteProfile.name}
             </p>
 
-            <h1 className="mt-5 max-w-4xl text-5xl font-semibold tracking-tight text-zinc-950 sm:text-6xl lg:text-7xl">
+            <h1 className="mt-5 max-w-5xl text-5xl font-semibold tracking-tight text-zinc-950 sm:text-6xl lg:text-7xl">
               Engineering systems across the modern data and AI stack.
             </h1>
 
@@ -58,29 +58,36 @@ export default function Home() {
             </div>
           </div>
 
-          <aside className="rounded-2xl border border-zinc-200 bg-zinc-50 p-6 lg:p-8">
-            <p className="text-xs font-semibold tracking-widest text-zinc-500 uppercase">
-              Portfolio focus
-            </p>
+          <aside className="overflow-hidden rounded-2xl border border-blue-200 bg-white shadow-sm">
+            <div className="border-b border-blue-100 bg-blue-50/70 px-6 py-4 lg:px-8">
+              <p className="text-xs font-semibold tracking-widest text-blue-800 uppercase">
+                Portfolio focus
+              </p>
+            </div>
 
-            <dl className="mt-6 space-y-5">
-              <div>
-                <dt className="text-sm text-zinc-500">Featured systems</dt>
-                <dd className="mt-1 text-2xl font-semibold text-zinc-950">4</dd>
-              </div>
-
-              <div>
-                <dt className="text-sm text-zinc-500">
-                  Engineering progression
+            <dl className="grid divide-y divide-stone-200 px-6 md:grid-cols-[0.55fr_1.7fr_1fr] md:divide-x md:divide-y-0 lg:px-8">
+              <div className="py-6 md:px-6 md:first:pl-0 md:last:pr-0">
+                <dt className="text-sm font-medium text-zinc-600">
+                  Featured production systems
                 </dt>
-                <dd className="mt-1 text-sm leading-6 font-medium text-zinc-800">
-                  Data → Analytics → Predictive ML → Generative AI
+                <dd className="mt-2 text-4xl font-semibold tracking-tight text-zinc-950">
+                  4
                 </dd>
               </div>
 
-              <div>
-                <dt className="text-sm text-zinc-500">Résumé</dt>
-                <dd className="mt-1 text-sm font-medium text-zinc-800">
+              <div className="py-6 md:px-6 md:first:pl-0 md:last:pr-0">
+                <dt className="text-sm font-medium text-zinc-600">
+                  Portfolio progression
+                </dt>
+                <dd className="mt-2 text-base leading-7 font-semibold text-zinc-900">
+                  Data Lakehouse Pipeline → Executive BI System → Containerized
+                  ML API → Vector Retrieval RAG API
+                </dd>
+              </div>
+
+              <div className="py-6 md:px-6 md:first:pl-0 md:last:pr-0">
+                <dt className="text-sm font-medium text-zinc-600">Résumé</dt>
+                <dd className="mt-2 text-base font-medium text-zinc-900">
                   {siteProfile.resumeAvailability}
                 </dd>
               </div>
@@ -94,7 +101,7 @@ export default function Home() {
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="text-sm font-semibold tracking-widest text-zinc-500 uppercase">
-                Engineering progression
+                Portfolio progression
               </p>
 
               <h2 className="mt-3 text-2xl font-semibold tracking-tight text-zinc-950">
@@ -138,7 +145,7 @@ export default function Home() {
         id="about"
         className="scroll-mt-24 border-b border-zinc-200 bg-white"
       >
-        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:py-24">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 sm:px-8 lg:py-24">
           <div>
             <p className="text-sm font-semibold tracking-widest text-zinc-500 uppercase">
               About
@@ -182,7 +189,7 @@ export default function Home() {
         className="mx-auto max-w-6xl px-6 py-20 sm:px-8 lg:py-28"
       >
         <div className="max-w-2xl">
-          <p className="text-sm font-semibold tracking-widest text-zinc-500 uppercase">
+          <p className="text-sm font-semibold tracking-widest text-zinc-600 uppercase">
             Featured systems
           </p>
 

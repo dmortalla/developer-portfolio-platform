@@ -1,4 +1,4 @@
-﻿import type { PortfolioProject } from "@/lib/projects/schema";
+import type { PortfolioProject } from "@/lib/projects/schema";
 
 export const urbanMobilityDataLakehouse = {
   slug: "urban-mobility-data-lakehouse",
@@ -8,6 +8,7 @@ export const urbanMobilityDataLakehouse = {
   positioning: {
     primaryDiscipline: "data-engineering",
     secondaryDisciplines: [],
+    systemArchetype: "Data Lakehouse",
     tagline: "From raw mobility data to analytics-ready intelligence.",
     summary:
       "A reproducible data engineering platform that transforms raw NYC taxi data through Raw, Bronze, Silver, and Gold layers and loads curated analytical outputs into DuckDB.",

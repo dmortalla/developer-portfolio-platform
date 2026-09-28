@@ -1,4 +1,4 @@
-﻿import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vitest";
 
 import { portfolioProjectSchema } from "@/lib/projects/schema";
 import { validateProjects } from "@/lib/projects/validate";
@@ -10,6 +10,7 @@ const validProject = {
   positioning: {
     primaryDiscipline: "data-engineering",
     secondaryDisciplines: [],
+    systemArchetype: "Example System",
     tagline: "A valid project used for schema tests.",
     summary: "A valid project used to verify portfolio content validation.",
   },

@@ -1,4 +1,4 @@
-﻿import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vitest";
 
 import { getFeaturedProjects } from "@/lib/projects/registry";
 import { buildPortfolioTechnologyGroups } from "@/lib/projects/summarize";
@@ -13,7 +13,9 @@ describe("portfolio technology summary", () => {
 
     expect(mlAi?.items).toContain("scikit-learn");
     expect(mlAi?.items).toContain("XGBoost");
-    expect(mlAi?.items).toContain("LangChain");
+    expect(
+      groups.find((group) => group.category === "framework")?.items,
+    ).toContain("LangChain");
     expect(mlAi?.items).toContain("FAISS");
   });
 
