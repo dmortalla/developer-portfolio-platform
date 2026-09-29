@@ -1,5 +1,6 @@
-﻿import { aiRagKnowledgeAssistant } from "@/content/projects/ai-rag-knowledge-assistant";
+import { aiRagKnowledgeAssistant } from "@/content/projects/ai-rag-knowledge-assistant";
 import { customerChurnPredictionPlatform } from "@/content/projects/customer-churn-prediction-platform";
+import { developerPortfolioPlatform } from "@/content/projects/developer-portfolio-platform";
 import { executiveHealthcareBiSystem } from "@/content/projects/executive-healthcare-bi-system";
 import { urbanMobilityDataLakehouse } from "@/content/projects/urban-mobility-data-lakehouse";
 import type { PortfolioProject } from "@/lib/projects/schema";
@@ -10,6 +11,7 @@ const projectDefinitions: readonly unknown[] = [
   executiveHealthcareBiSystem,
   customerChurnPredictionPlatform,
   aiRagKnowledgeAssistant,
+  developerPortfolioPlatform,
 ];
 
 const projects = validateProjects(projectDefinitions);
@@ -26,6 +28,10 @@ export function getFeaturedProjects(): readonly PortfolioProject[] {
         (first.featured.order ?? Number.MAX_SAFE_INTEGER) -
         (second.featured.order ?? Number.MAX_SAFE_INTEGER),
     );
+}
+
+export function getAdditionalProjects(): readonly PortfolioProject[] {
+  return projects.filter((project) => !project.featured.enabled);
 }
 
 export function getProjectBySlug(slug: string): PortfolioProject | undefined {
