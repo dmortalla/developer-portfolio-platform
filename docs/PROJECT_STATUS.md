@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-Implementation
+Production maintenance and incremental portfolio expansion
 
 ## Current Milestone
 
-VS02 — Urban Mobility Data Lakehouse Vertical Slice
+VS07 — v1.2.0 Platform Extensibility and Self-Dogfooding
 
 ## Architecture Status
 
@@ -43,81 +43,90 @@ Frozen
 
 ## Current Quality Baseline
 
-Local gates:
+Local release gates:
 
 1. `npm run lint`
 2. `npm run typecheck`
 3. `npm test`
 4. `npm run build`
-5. `npm run format:check`
-6. `git diff --check`
+5. `npm run test:e2e`
+6. `npm run format:check`
+7. `git diff --check`
 
 Current baseline:
 
 - lint: passing
 - typecheck: passing
-- unit tests: passing
+- unit/component tests: passing
 - production build: passing
 - Playwright E2E: passing
 - axe accessibility checks: passing
+- formatting validation: passing
 - whitespace validation: passing
 
 ## Current Automated Tests
 
-14 unit/component tests and 3 Playwright E2E/accessibility tests.
+The automated suite covers:
 
-This baseline test verifies that the Vitest environment, jsdom environment,
-setup file, and test discovery pipeline operate successfully.
+- project schema and registry behavior
+- featured/additional project partitioning
+- individual project content
+- technology aggregation
+- reusable project-card rendering
+- site metadata and sitemap generation
+- homepage navigation
+- generic case-study routing
+- the Developer Portfolio Platform self-dogfooding flow
+- automated accessibility analysis
+
+Playwright currently executes 5 E2E/accessibility tests.
 
 ## CI
 
-GitHub Actions validates:
+GitHub Actions validates pull requests and changes to `main` through:
 
 - dependency installation
-- linting
-- TypeScript
-- unit tests
+- ESLint
+- TypeScript type checking
+- unit/component tests
 - production build
-- formatting
+- Playwright browser testing
+- axe accessibility checks
+- Prettier formatting validation
 
-E2E and automated accessibility execution will be added when the first
-meaningful browser flow exists.
-
-## Current VS02 Progress
+## Current VS07 Progress
 
 Completed:
 
-- project schema
-- Zod validation
-- project registry
-- cross-project integrity validation
-- schema and registry unit tests
+- generic additional-project registry selector
+- conditional additional-engineering homepage section
+- featured/additional collection partition tests
+- Developer Portfolio Platform validated project definition
+- automatic generic case-study routing
+- automatic metadata generation
+- automatic sitemap participation
+- production demo and repository evidence
+- E2E navigation coverage
+- automated accessibility coverage
+- local desktop visual verification
+- full release quality gate
 
-Next:
+Release remaining:
 
-- integrate verified Urban Mobility Data Lakehouse content
-
-Planned scope:
-
-- project schema
-- Zod validation
-- project repository/content service
-- first real project definition
-- reusable project card
-- dynamic project route
-- first case-study page
-- metadata generation
-- first meaningful E2E test
-- first accessibility test
+- synchronize release documentation
+- bump package metadata to v1.2.0
+- final release gate
+- merge to `main`
+- push
+- production verification
+- create and push `v1.2.0` tag
 
 ## Known Limitations
 
-- project schema and registry foundation are complete
-- no real portfolio project content has been integrated yet
-- browser navigation is covered by Playwright E2E testing
-- automated accessibility checks are active for the homepage and first project case study
-- production deployment has not yet been configured
-- visual design tokens have not yet been implemented
+- The four original systems remain the intentionally fixed flagship data-and-AI progression.
+- Additional engineering work is presented separately so supporting projects do not distort that narrative.
+- The Developer Portfolio Platform currently has no dedicated architecture-image asset; its architecture is rendered from structured project content.
+- ESLint 10 remains intentionally deferred until the relevant Next.js linting dependencies declare compatible support.
 
 ## Architectural Invariant
 
@@ -236,3 +245,56 @@ The post-v1 experience refinement is complete and verified in production.
 The existing architectural invariant remains unchanged:
 
 Adding a new project must not require modifying page-level rendering logic.
+
+## VS07 — v1.2.0 Platform Extensibility and Self-Dogfooding
+
+Status: Complete pending production release verification
+
+The platform's central extensibility invariant was exercised by adding the Developer Portfolio Platform itself as a new portfolio artifact.
+
+### Extensibility implementation
+
+- Added a generic `getAdditionalProjects()` registry selector.
+- Preserved the original four-project Featured Systems progression.
+- Added a generic Additional Engineering Work homepage surface for non-featured projects.
+- Added the Developer Portfolio Platform through the same validated `PortfolioProject` content model used by all other projects.
+- No project-specific page implementation was created.
+- No slug-specific rendering condition was added.
+- The existing dynamic project route and shared `ProjectCaseStudy` renderer handle the new project automatically.
+
+### Automatic platform participation
+
+Registration of the Developer Portfolio Platform automatically provides:
+
+- validated project lookup
+- homepage discovery
+- static project-route generation
+- project SEO metadata
+- sitemap participation
+- reusable case-study rendering
+- repository and production-demo links
+
+### Verification
+
+- The four-system flagship progression remains unchanged.
+- Featured and additional project collections are tested as a complete, disjoint partition of registered projects.
+- Developer Portfolio Platform registry behavior is covered by focused unit tests.
+- Homepage-to-case-study navigation is covered by Playwright.
+- The Developer Portfolio Platform case study passes automated axe accessibility analysis.
+- Local desktop presentation was visually verified.
+- Full quality gate passes:
+  - ESLint
+  - TypeScript
+  - unit/component tests
+  - production build
+  - 5 Playwright E2E/accessibility tests
+  - Prettier
+  - `git diff --check`
+
+### Architectural result
+
+The core invariant is now demonstrated rather than merely specified:
+
+> Adding a new portfolio project does not require a project-specific page implementation.
+
+The new project required structured content registration and generic collection support, while project routing, metadata, sitemap generation, and case-study rendering continued to use the existing shared architecture.

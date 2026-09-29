@@ -216,9 +216,22 @@ Initial production release with four featured systems, validated project content
 
 Readability and presentation release covering desktop reading measures, responsive Portfolio Focus presentation, stronger case-study hierarchy, technology-label normalization, accessibility contrast fixes, repository consistency, and desktop/mobile production verification.
 
+### v1.2.0
+
+Platform extensibility and self-dogfooding release including:
+
+- generic discovery for non-featured engineering projects
+- preserved four-system flagship progression
+- Developer Portfolio Platform added through the validated content model
+- automatic generic routing, metadata, sitemap, and case-study rendering
+- registry partition invariants
+- dedicated unit and E2E coverage
+- automated accessibility verification for the new case study
+- architecture documentation updated with verified extensibility evidence
+
 ## Current Status
 
-**Stable production release: `v1.1.0`**
+**Release candidate: `v1.2.0`**
 
 The v1 architecture is intentionally stable. Structural changes should be driven by demonstrated architectural requirements rather than implementation convenience.
 

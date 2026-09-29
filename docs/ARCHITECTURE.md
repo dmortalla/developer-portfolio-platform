@@ -154,18 +154,23 @@ Automated accessibility checks are included in the Playwright E2E quality gate u
 
 ## Extensibility Test
 
-A future project should be addable primarily by creating validated project
-content and assets.
+The core extensibility invariant has been exercised successfully.
 
-That content should automatically participate in:
+The Developer Portfolio Platform was added as a new, non-featured portfolio project through the existing structured-content model and registry.
 
-- project routing
-- portfolio views
+The project automatically participates in:
+
+- project lookup
+- homepage discovery
+- static project routing
 - metadata generation
 - sitemap generation
 - evidence rendering
+- shared case-study presentation
 
-without introducing a project-specific page implementation.
+No project-specific page implementation or slug-specific rendering branch was required.
+
+This verifies the architectural invariant in running code rather than leaving it as a design assumption.
 
 ## Architecture Freeze
 

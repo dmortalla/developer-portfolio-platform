@@ -1,11 +1,15 @@
 import { ProjectCard } from "@/components/projects/project-card";
 import { TechnologyToolkit } from "@/components/projects/technology-toolkit";
-import { getFeaturedProjects } from "@/lib/projects/registry";
+import {
+  getAdditionalProjects,
+  getFeaturedProjects,
+} from "@/lib/projects/registry";
 import { buildPortfolioTechnologyGroups } from "@/lib/projects/summarize";
 import { siteProfile } from "@/lib/site/profile";
 
 export default function Home() {
   const featuredProjects = getFeaturedProjects();
+  const additionalProjects = getAdditionalProjects();
   const technologyGroups = buildPortfolioTechnologyGroups(featuredProjects);
 
   return (
@@ -210,6 +214,34 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {additionalProjects.length > 0 ? (
+        <section className="border-t border-zinc-200 bg-zinc-50">
+          <div className="mx-auto max-w-6xl px-6 py-20 sm:px-8 lg:py-24">
+            <div className="max-w-4xl">
+              <p className="text-sm font-semibold tracking-widest text-zinc-600 uppercase">
+                Additional engineering work
+              </p>
+
+              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl">
+                Production systems beyond the flagship progression.
+              </h2>
+
+              <p className="mt-4 leading-7 text-zinc-600">
+                Additional projects demonstrate complementary software,
+                platform, automation, and engineering capabilities while the
+                featured systems preserve the core data-and-AI progression.
+              </p>
+            </div>
+
+            <div className="mt-10 grid gap-6">
+              {additionalProjects.map((project) => (
+                <ProjectCard key={project.slug} project={project} />
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
     </main>
   );
 }
